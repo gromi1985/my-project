@@ -1,4 +1,5 @@
 <template>
+<div class="bloqueGeneral">
   <div class="home">
     <h2> "Qué quieres hacer?" </h2>
     <div id="v-model-multiple-checkboxes">
@@ -22,6 +23,11 @@
     <br />
     <span>Preu: {{ total }}</span>
   </div>
+
+  <button id="buTTomBack">
+      <router-link to="/Welcome">Back</router-link> 
+   </button> 
+   </div>
 </template>
 
 <script>
@@ -61,5 +67,20 @@ border-style: ridge ;
 width:70%;
 margin:0 auto;
 padding:15px;
+text-align:start;
 }
+
+.bloqueGeneral{
+font-size:20px;
+width:70%;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+#buTTomBack{
+width:10%;
+}
+
 </style>
+
