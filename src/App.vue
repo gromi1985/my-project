@@ -1,11 +1,6 @@
 <template>
   <router-link to="/Welcome">Welcome</router-link>
 
-  <div id="nav">
-   <button>
-      <router-link to="/">Home</router-link> 
-   </button> 
-  </div>
   <router-view/>
 </template>
 
