@@ -31,7 +31,7 @@
                         break;
                     default:
                 }   
-            this.$emit('click',this.itemElement,this.cantidad);
+            this.$emit('click_hijo',this.itemElement,this.cantidad);
  
          }
         }
