@@ -1,7 +1,7 @@
 <template>
         <div class="v_elementsNum">
             <button @click="operations(0)">+</button>
-            <input @input="operations(2)" type="text" :value="cantidad"/>
+            <input @input="operations(2)" type="text" size="10" v-model='cantidad'/>
             <button @click="operations(1)">-</button>
         </div>
 </template>
@@ -14,7 +14,6 @@
         data() {
             return {
                  cantidad:0,
-                 checkedNames:[]
             }
         },
         methods:{
@@ -31,8 +30,6 @@
                     case 2:
                         if(this.cantidad < 0)
                            this.cantidad = 0;
-                        else
-                           this.cantidad = this.checkedNames[0];
                         break;
                     default:
                 }   

@@ -28,11 +28,7 @@ export default {
   methods:{
             addTotal: function(itemElement,cantidad){
             this.itemOption[itemElement] = cantidad;
-            console.log('cantidad' + cantidad);
-            console.log('itemElement' + itemElement);
-
-
-              this.$emit('click_padre',this.itemOption);
+            this.$emit('click_padre',this.itemOption);
 
          }
 
