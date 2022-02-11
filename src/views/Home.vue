@@ -9,7 +9,7 @@
       </div>
     <br>
      <div>
-        <Panel v-show="mostrar"> </Panel>
+        <Panel v-show="mostrar" @click_padre="arrayValores"> </Panel>
         <input type="checkbox" id="valor_2" value="300" v-model="checkedNames" @change="sumaImportes(0)" />
         <label for="valor_2">Una consultoria SEO (300€)</label>
      </div>
@@ -41,7 +41,8 @@ export default {
           return {
             checkedNames: [],
             total:0,
-            mostrar:false
+            mostrar:false,
+            quantitys:[],
           }
       },
       methods:{
@@ -51,7 +52,13 @@ export default {
             this.total=0;
             for(let e of this.checkedNames)
               this.total += Number(e);
-         }
+            for(let e of this.quantitys)
+                this.total += (e*30);
+         },
+          arrayValores:function(arrayValores){
+            this.quantitys = arrayValores;
+            }
+
       }
  }
 </script>

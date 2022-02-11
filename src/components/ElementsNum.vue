@@ -10,9 +10,12 @@
 <script>
       export default {
         name: 'ElementsNum',
+        props:{
+         itemElement: Number
+        },
         data() {
             return {
-                 cantidad:0
+                 cantidad:0,
             }
         },
         methods:{
@@ -27,8 +30,10 @@
                             this.cantidad--;
                         break;
                     default:
-                }
-            }
+                }   
+            this.$emit('click',this.itemElement,this.cantidad);
+ 
+         }
         }
        }
 </script>

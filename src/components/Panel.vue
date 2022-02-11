@@ -2,13 +2,13 @@
    <div id="v-model-values" >
         <div class="line_element">
             <label for="imput_1">Numero de páginas</label>
-            <ElementsNum id="firstElement"></ElementsNum>
+            <ElementsNum id="firstElement" itemElement="0"   @click="addTotal"></ElementsNum>
         </div>
 
         <br>
         <div class="line_element">
             <label for="imput_2">Numero de idiomas</label>
-            <ElementsNum id="secondElement"></ElementsNum>
+            <ElementsNum id="secondElement" itemElement="1"  @click="addTotal"></ElementsNum>
 
         </div>
     </div>
@@ -18,20 +18,20 @@
 import ElementsNum from '@/components/ElementsNum.vue'
 
 export default {
-  name: 'Home',
+  name: 'Panel',
   components: {ElementsNum},
       data() {
         return {
-          checkedNames: [],
+          itemOption: [0,0],
           total:0
         }
       },
-      methods:{
-          sumaImportes: function(){
-          this.total=0;
-          for(let e of this.checkedNames)
-              this.total += Number(e);
-          }
+  methods:{
+            addTotal: function(itemElement,cantidad){
+              this.itemOption[itemElement] = cantidad;
+              this.$emit('click_padre',this.itemOption);
+         }
+
       }
 }
 </script>
