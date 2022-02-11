@@ -9,10 +9,11 @@
       </div>
     <br>
      <div>
-        <Panel v-show="mostrar" @click_padre="arrayValores"> </Panel>
+        <Panel v-show="mostrar" @click_padre="totalImportes"> </Panel>
         <input type="checkbox" id="valor_2" value="300" v-model="checkedNames" @change="sumaImportes(0)" />
         <label for="valor_2">Una consultoria SEO (300€)</label>
      </div>
+
      <br>
      <div>
         <input type="checkbox" id="valor_3" value="200" v-model="checkedNames"  @change="sumaImportes(0)"/>
@@ -46,18 +47,22 @@ export default {
           }
       },
       methods:{
-         sumaImportes: function(option){
-            if(option)
-              this.mostrar = !this.mostrar;
+        totales:function(){
             this.total=0;
             for(let e of this.checkedNames)
               this.total += Number(e);
             for(let e of this.quantitys)
                 this.total += (e*30);
          },
-          arrayValores:function(arrayValores){
-            this.quantitys = arrayValores;
-            }
+         sumaImportes: function(option){
+            if(option)
+              this.mostrar = !this.mostrar;
+            this.totales();
+         },
+        totalImportes:function(arrayQuantities){
+            this.quantitys = arrayQuantities;
+            this.totales();
+          }
 
       }
  }

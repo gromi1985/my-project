@@ -2,14 +2,13 @@
    <div id="v-model-values" >
         <div class="line_element">
             <label for="imput_1">Numero de páginas</label>
-            <ElementsNum id="firstElement" itemElement="0"   @click_hijo="addTotal"></ElementsNum>
+            <ElementsNum id="firstElement" itemElement=0   @click_hijo="addTotal"></ElementsNum>
         </div>
 
         <br>
         <div class="line_element">
             <label for="imput_2">Numero de idiomas</label>
-            <ElementsNum id="secondElement" itemElement="1"  @click_hijo="addTotal"></ElementsNum>
-
+            <ElementsNum id="secondElement" itemElement=1  @click_hijo="addTotal"></ElementsNum>
         </div>
     </div>
 </template>
@@ -28,8 +27,13 @@ export default {
       },
   methods:{
             addTotal: function(itemElement,cantidad){
-              this.itemOption[itemElement] = cantidad;
+            this.itemOption[itemElement] = cantidad;
+            console.log('cantidad' + cantidad);
+            console.log('itemElement' + itemElement);
+
+
               this.$emit('click_padre',this.itemOption);
+
          }
 
       }
