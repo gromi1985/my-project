@@ -10,9 +10,7 @@
 <script>
       export default {
         name: 'ElementsNum',
-        props:{
-         itemElement: Number
-        },
+        props:['itemElement'],
         data() {
             return {
                  cantidad:0,
